@@ -1,15 +1,6 @@
 import os
 
-
 class Config:
-    SECRET_KEY = os.getenv("SECRET_KEY", "")
-
-
-    #Database configuration
-
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL", "mysql+pymysql://root:password@localhost/pool_game")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = os.getenv("")
-
-    #JWT Configuration
-
-    JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "")
+    SECRET_KEY = os.getenv("SECRET_KEY", "default_secret_key")
